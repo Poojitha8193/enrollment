@@ -31,7 +31,7 @@ public class Controller {
         try {
             // Validate student
             ResponseEntity<StudentDTO> studentResponse = restTemplate.getForEntity(
-                    "http://localhost:8001/student/" + dto.getStudentId(), StudentDTO.class);
+                    "https://studentwebapp-fnfaeacefdb9aggu.canadacentral-01.azurewebsites.net/student/" + dto.getStudentId(), StudentDTO.class);
             if (!studentResponse.getStatusCode().is2xxSuccessful() || studentResponse.getBody() == null) {
                 return ResponseEntity.badRequest().body("Invalid student ID: " + dto.getStudentId());
             }
