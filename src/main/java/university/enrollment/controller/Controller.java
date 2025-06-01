@@ -38,7 +38,7 @@ public class Controller {
 
             // Validate course
             ResponseEntity<CourseDTO> courseResponse = restTemplate.getForEntity(
-                    "http://localhost:8000/course/" + dto.getCourseId(), CourseDTO.class);
+                    "https://coursewebapp-hqc9asafcfa7dcdd.canadacentral-01.azurewebsites.net/course/" + dto.getCourseId(), CourseDTO.class);
             if (!courseResponse.getStatusCode().is2xxSuccessful() || courseResponse.getBody() == null) {
                 return ResponseEntity.badRequest().body("Invalid course ID: " + dto.getCourseId());
             }
